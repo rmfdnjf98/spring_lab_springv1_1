@@ -1,4 +1,5 @@
-{{> header}}
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ include file="/WEB-INF/views/header.jsp" %>
 
 <div class="container p-5">
 

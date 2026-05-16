@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +18,6 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/board/save-form" style="color: white">글쓰기</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout" style="color: white">로그아웃</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/join-form" style="color: white">회원가입</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login-form" style="color: white">로그인</a>
       </li>
     </ul>
   </div>

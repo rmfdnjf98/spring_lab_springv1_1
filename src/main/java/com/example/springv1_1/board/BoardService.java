@@ -11,15 +11,15 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class BoardService {
 
-    private final BoardRepository boardRepository;
+    private final BoardMapper boardMapper;
 
     public List<Board> 게시글목록() {
-        List<Board> boards = boardRepository.findAll();
+        List<Board> boards = boardMapper.findAll();
         return boards;
     }
 
     public Board 게시글상세(Integer id) {
-        Board board = boardRepository.findById(id);
+        Board board = boardMapper.findById(id);
         System.out.println("======================");
         System.out.println(board);
         return board;
@@ -30,25 +30,26 @@ public class BoardService {
         Board board = new Board();
         board.setTitle(requestDTO.getTitle());
         board.setContent(requestDTO.getContent());
-        boardRepository.save(board);
+        boardMapper.save(board);
 
     }
 
     @Transactional
     public void 게시글삭제(Integer id) {
-        Board board = boardRepository.findById(id);
-        boardRepository.delete(board);
+        Board board = boardMapper.findById(id);
+        boardMapper.delete(board);
     }
 
     public Board 게시글수정폼(Integer id) {
-        Board board = boardRepository.findById(id);
+        Board board = boardMapper.findById(id);
         return board;
     }
 
     @Transactional
     public void 게시글수정(Integer id, BoardRequest.UpdateDTO requestDTO) {
-        Board board = boardRepository.findById(id);
+        Board board = boardMapper.findById(id);
         board.setTitle(requestDTO.getTitle());
         board.setContent(requestDTO.getContent());
+        boardMapper.update(board);
     }
 }
